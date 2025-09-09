@@ -173,14 +173,16 @@
             </div>
 
             <div class="task-container">
+                  {% for task in pending_task %}
                   <div class="task-item">
-                        <div class="task-text">This is some Task</div>
+                        <div class="task-text">{{task}}</div>
                         <div class="task-actions">
                               <button class="btn btn-success">Mark as Done</button>
                               <button class="btn btn-danger">🗑️</button>
                               <button class="btn btn-primary">✏️</button>
                         </div>
                   </div>
+                  {% endfor %}
             </div>
 
             <div class="completed-section">
@@ -188,9 +190,11 @@
                         <div class="completed-title">Completed Tasks</div>
                   </div>
 
+                  {% for task in completed_task %}
                   <div class="completed-task">
-                        This is the completed task.
+                        {{task}}
                   </div>
+                  {% endfor %}
             </div>
 
             <form class="add-task-form">
@@ -198,6 +202,9 @@
                   <button type="submit" class="add-btn">Add</button>
             </form>
       </div>
+
+
+
 
       <script>
             // Get current date and format it nicely
