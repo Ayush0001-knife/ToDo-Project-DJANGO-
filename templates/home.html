@@ -197,8 +197,9 @@
                   {% endfor %}
             </div>
 
-            <form class="add-task-form">
-                  <input type="text" class="task-input" placeholder="this is the new task">
+            <form class="add-task-form" action="{% url 'addtask' %}" method="POST">
+                  {% csrf_token %}
+                  <input name="task" type="text" class="task-input" placeholder="this is the new task">
                   <button type="submit" class="add-btn">Add</button>
             </form>
       </div>
